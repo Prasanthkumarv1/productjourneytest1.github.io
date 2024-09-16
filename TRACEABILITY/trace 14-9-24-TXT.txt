@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traceability</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page {
+            display: none; /* Hide all pages by default */
+            padding: 50px 20px;
+        }
+
+        .page.active {
+            display: block; /* Show the active page */
+        }
+
+        /* Header Bar */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #00008B;
+            padding: 10px;
+            color: white;
+        }
+
+        .header .logo img {
+            width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00008B;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: normal;
+            color: #00008B;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .black-line {
+            width: 80%;
+            height: 2px;
+            background-color: #ddd;
+            margin: 40px auto;
+        }
+
+        /* Image and Text Side by Side */
+        .image-text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px auto;
+            max-width: 90%;
+        }
+
+        .image-text-container img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .text-right h3 {
+            font-size: 20px;
+            color: #00008B;
+            margin: 0;
+        }
+
+        .text-right p {
+            font-size: 16px;
+            color: #000;
+        }
+
+        /* Section container for Info and Journey */
+        .info-journey-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Styles for the grey background sections */
+        .info-section, .journey-section {
+            background-color: #f0f0f0; /* Mild grey background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Styling for the headings above the boxes */
+       .heading-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Increase space below the heading */
+}
+
+       .heading-container h3 {
+    font-size: 22px;
+    color: #00008B;
+    font-weight: bold;
+    background: #f4f4f4; /* Match the body background color */
+    padding:  10px;
+    position: relative;
+    top: 10px; /* Adjust this value to move the heading down */
+    z-index: 1;
+}
+
+        /* Image styling for the QR code and Infographic */
+        .info-section img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .info-section .infographic {
+            width: 100%;
+            max-width: 368px;
+            height: auto;
+        }
+
+        /* Media Queries for Mobile Screens */
+        @media (min-width: 600px) {
+            .image-text-container {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .image-text-container img {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
+
+            .text-right h3 {
+                font-size: 24px;
+            }
+
+            .text-right p {
+                font-size: 18px;
+            }
+        }
+    </style>
+    <script>
+        let currentPage = 0; // Initialize current page index
+
+        // Function to show a specific page
+        function showPage(pageIndex) {
+            const pages = document.querySelectorAll('.page');
+            // Hide all pages
+            pages.forEach(page => page.classList.remove('active'));
+            // Show the specified page
+            pages[pageIndex].classList.add('active');
+        }
+
+        // Function to go to the next page
+        function nextPage() {
+            const pages = document.querySelectorAll('.page');
+            if (currentPage < pages.length - 1) {
+                currentPage++;
+                showPage(currentPage);
+            }
+        }
+
+        // Initialize the first page to be visible
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage(currentPage);
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <div class="logo">
+            <img src="https://www.zarla.com/images/zarla-cotton-court-1x1-2400x2400-20221004-vy9mw9gr6fh9yp3fhxmf.png?crop=1:1,smart&width=250&dpr=2" alt="Logo">
+        </div>
+        <h1>TRACEABILITY</h1>
+    </div>
+
+    <!-- Page 1: Front Page -->
+    <div class="page active">
+        <h2>TRACEABILITY BY BLOCKCHAIN</h2>
+        <h3>Click to Scan a QR code to view the journey of the product</h3>
+        <button class="button" onclick="alert('QR Code Scanner Activated')">SCAN</button>
+        <div class="black-line"></div>
+        <h3>Click to view the sample journey</h3>
+        <button class="button" onclick="nextPage()">VIEW SAMPLE JOURNEY</button>
+    </div>
+
+    <!-- Page 2: Sample Journey -->
+    <div class="page">
+        <!-- Image and Text Side by Side -->
+        <div class="image-text-container">
+            <img src="https://microcotton.com/images/products/towels.jpg" alt="Terry Towel">
+            <div class="text-right">
+                <h3>Terry Towel</h3>
+                <p>Made By Organic Cotton</p>
+            </div>
+        </div>
+
+        <!-- Info and Journey Section -->
+        <div class="info-journey-container">
+            <!-- Left Side: Info Section -->
+            <div>
+                <div class="heading-container">
+                    <h3>Info</h3>
+                </div>
+                <div class="info-section">
+                    <img src="https://assets.becredible.co/images/credible/qr_code_assets/microcotton/f2h_why.png" alt="QR Code">
+                    <img class="infographic" src="https://assets.becredible.co/images/credible/qr_code_assets/infographic_generic.jpeg" alt="Infographic">
+                </div>
+            </div>
+
+            <!-- Right Side: Journey Section -->
+<div>
+    <div class="heading-container">
+        <h3>Journey</h3>
+    </div>
+    <div class="journey-section">
+      
+        <div class="white-box">
+            <div class="image-text">
+                <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/65f90635-10bb-4df8-9dfc-53ec8629dd77-rawcotton.jpeg?generation=1677490963512645&alt=media" alt="Journey Image 1">
+                <div class="text">
+                    <div class="text-header">ASSET</div>
+                    <div class="text-description">Raw Cotton</div>
+                    <a href="journeypdf1.pdf" target="_blank" class="pdf-link">View PDF</a>
+                </div>
+            </div>
+            <div class="image-text">
+                <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/bansat.jpeg?generation=1677648494674891&alt=media" alt="Journey Image 2">
+                <div class="text">
+                    <div class="text-header">REGISTERED BY</div>
+                    <div class="text-description">TN FARMERS ASSOC</div>
+                    <a href="journeypdf2.pdf" target="_blank" class="pdf-link">View PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<style>
+.journey-section {
+    padding: 20px; /* Add padding around the content */
+    background-color: #f0f0f0; /* Mild grey background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.white-box {
+    background-color: #fff; /* White background for the box */
+    width: 400px; /* Set width of the white box */
+    padding: 10px; /* Padding inside the white box */
+    border-radius: 5px; /* Rounded corners for the box */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between image-text pairs */
+}
+
+
+    .image-text-container {
+        flex-direction: column;
+        align-items: center;
+    }
+.image-text {
+    display: flex;
+    flex-direction: row; /* Align image and text in a row */
+    align-items: center; /* Center items vertically */
+    gap: 20px; /* Space between image and text */
+}
+
+.white-box img {
+    width: 120px; /* Set image width */
+    height: 80px; /* Set image height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.text-header {
+    font-weight: bold;
+    margin-bottom: 5px; /* Space between header and description */
+}
+
+.text-description {
+    font-size: 14px;
+    color: #555; /* Slightly darker color for the description */
+}
+
+.pdf-link {
+    margin-top: 10px; /* Space above the link */
+    font-size: 14px;
+    color: #0066cc; /* Link color */
+    text-decoration: none; /* Remove underline from link */
+}
+
+.pdf-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+</style>
+
+<!-- Journey Section with 5 Boxes -->
+<div class="journey-section">
+    <div class="white-box">
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/65f90635-10bb-4df8-9dfc-53ec8629dd77-rawcotton.jpeg?generation=1677490963512645&alt=media" alt="Journey Image 1">
+            <div class="text">
+                <div class="text-header">ASSET</div>
+                <div class="text-description">Raw Cotton</div>
+            </div>
+        </div>
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/credible_v2_public_test1/delight.jpeg" alt="Journey Image 2">
+            <div class="text">
+                <div class="text-header">REGISTERED BY</div>
+                <div class="text-description">Delight Lifelike Products Pvt. Ltd</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-box">
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/65f90635-10bb-4df8-9dfc-53ec8629dd77-rawcotton.jpeg?generation=1677490963512645&alt=media" alt="Journey Image 1">
+            <div class="text">
+                <div class="text-header">ASSET</div>
+                <div class="text-description">Cotton Yarn</div>
+            </div>
+        </div>
+        <div class="image-text">
+            <img src="https://credible-assets.web.app/images/credible/qr_code_assets/microcotton/generic_textile_factory.png" alt="Journey Image 2">
+            <div class="text">
+                <div class="text-header">REGISTERED BY</div>
+                <div class="text-description">Bafna Ginning & Pressing Pvt. Ltd</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-box">
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/e753acdb-fe39-4ce6-af26-684e9c700973-image15.jpeg?generation=1677490965477589&alt=media" alt="Journey Image 1">
+            <div class="text">
+                <div class="text-header">ASSET</div>
+                <div class="text-description">Ginned Bale</div>
+            </div>
+        </div>
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/credible_v2_public_test1/bafna.png" alt="Journey Image 2">
+            <div class="text">
+                <div class="text-header">REGISTERED BY</div>
+                <div class="text-description">Bafna Ginning & Pressing Pvt. Ltd</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-box">
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/79f78893-193c-4a85-9708-80e6900e204a-image16.jpeg?generation=1677490967947855&alt=media" alt="Journey Image 1">
+            <div class="text">
+                <div class="text-header">ASSET</div>
+                <div class="text-description">Yarn</div>
+            </div>
+        </div>
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/credible_v2_public_test1/sks.jpeg" alt="Journey Image 2">
+            <div class="text">
+                <div class="text-header">REGISTERED BY</div>
+                <div class="text-description">SKS Mills</div>
+            </div>
+        </div>
+    </div>
+<div class="white-box">
+    <div class="image-text">
+        <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/b6c8cea0-6f8f-45fc-88c4-d494ccf7dc6f-image17.jpeg?generation=1677490969416172&alt=media" alt="Journey Image 1">
+        <div class="text">
+            <div class="text-header">ASSET</div>
+            <div class="text-description">Weaving</div>
+        </div>
+    </div>
+    <div class="image-text">
+        <img src="https://storage.googleapis.com/credible_v2_public_test1/bluemount.jpeg" alt="Journey Image 2">
+        <div class="text">
+            <div class="text-header">REGISTERED BY</div>
+            <div class="text-description">Blue Mount Textiles</div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .journey-section {
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .white-box {
+        background-color: #fff;
+        width: 380px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .image-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .white-box img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text-header {
+        font-weight: 400; /* Normal font weight */
+        margin-bottom: 5px;
+    }
+
+    .text-description {
+        font-size: 14px;
+        font-weight: 700; /* Bold font weight */
+        color: #555;
+    }
+</style>
+
+
+
+<!-- Journey Section with 5 Boxes -->
+<div class="journey-section">
+    <div class="white-box">
+        <div class="image-text">
+            <img src="https://assets.becredible.co/images/credible/qr_code_assets/microcotton/microcotton_dyeing.jpeg" alt="Journey Image 1">
+            <div class="text">
+                <div class="text-header">ASSET</div>
+                <div class="text-description">Dyeing</div>
+            </div>
+        </div>
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/credible_v2_public_test1/bluemount.jpeg" alt="Journey Image 2">
+            <div class="text">
+                <div class="text-header">REGISTERED BY</div>
+                <div class="text-description">Blue Mount Textiles</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-box">
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/c62428a9-321f-43ee-b102-228ad1a211e0-cut.jpeg?generation=1677490971154939&alt=media" alt="Journey Image 1">
+            <div class="text">
+                <div class="text-header">ASSET</div>
+                <div class="text-description">Cutting & Sewing</div>
+            </div>
+        </div>
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/credible_v2_public_test1/bluemount.jpeg" alt="Journey Image 2">
+            <div class="text">
+                <div class="text-header">REGISTERED BY</div>
+                <div class="text-description">Blue Mount Textiles</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-box">
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/fb30c65a-2ca7-43a4-a424-8d6d6da3ae53-pack.jpeg?generation=1677490972568178&alt=media" alt="Journey Image 1">
+            <div class="text">
+                <div class="text-header">ASSET</div>
+                <div class="text-description">Packing & Finishing</div>
+            </div>
+        </div>
+        <div class="image-text">
+            <img src="https://storage.googleapis.com/download/storage/v1/b/credible_v2_public_test1/o/bluemount.jpeg?generation=1677558402039752&alt=media" alt="Journey Image 2">
+            <div class="text">
+                <div class="text-header">REGISTERED BY</div>
+                <div class="text-description">Blue Mount Textiles</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="white-box">
+        <div class="image-text">
+            <img src="https://assets.becredible.co/images/credible/qr_code_assets/microcotton/image26.jpg" alt="Journey Image 1">
+            <div class="text">
+                <div class="text-header">ASSET</div>
+                <div class="text-description">Farm To Home Terry Towels</div>
+            </div>
+        </div>
+        <div class="image-text">
+            <img src="https://assets.becredible.co/images/credible/qr_code_assets/microcotton/costco.png" alt="Journey Image 2">
+            <div class="text">
+                <div class="text-header">REGISTERED BY</div>
+                <div class="text-description">Costco, USA</div>
+            </div>
+        </div>
+    </div>
+
+<style>
+    .journey-section {
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .white-box {
+        background-color: #fff;
+        width: 290px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 20px; /* Add space between boxes */
+    }
+
+    .image-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .white-box img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .text-header {
+        font-weight: 14px;
+        margin-bottom: 5px;
+    }
+
+    .text-description {
+        font-size: bold;
+        color: #555;
+    }
+</style>
+
+
+
+           
+
+</body>
+</html>
